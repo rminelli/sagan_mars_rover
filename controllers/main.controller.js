@@ -13,7 +13,7 @@ const htmlHead = `<head>
 
 let lostRovers = [],
   newRoverPosition,
-  response = `${htmlHead} <div class="jumbotron" style="padding:40px;"> <h1>Sagan Mars Rover</h1><p><b>Input:</b></p><br>[[INPUT]]<br><br><p><b>Output:</b></p><br>[[OUTPUT]]</div>`,
+  response = `${htmlHead} <div class="jumbotron" style="padding:40px;"> <h1>Sagan Mars Rover</h1><p><b>Input:</b></p>[[INPUT]]<br><br><p><b>Output:</b></p>[[OUTPUT]]</div>`,
   cartesians = configurationData.cartesians,
   compass = configurationData.compass,
   mapSize,
