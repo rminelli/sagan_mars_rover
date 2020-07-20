@@ -20,7 +20,7 @@ Open [http://localhost:8000/](http://localhost:8000/) to check the results!
 
 ## Docker
 
-### If you want to make things simpler, just run the project with the docker container: :fire:
+**If you want to make things simpler, just run the project with the docker container:** :fire:
 
 **Software needed to execute the project with container:**
 
