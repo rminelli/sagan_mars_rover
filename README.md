@@ -4,7 +4,7 @@
 
 ## To start the application
 
-Software needed to execute the project:
+### Software needed to execute the project:
 
 [Node JS](https://nodejs.org/)
 
@@ -20,9 +20,9 @@ Open [http://localhost:8000/](http://localhost:8000/) to check the results!
 
 ## Docker
 
-If you want to make things simpler, just run the project with the docker container: :fire:
+## If you want to make things simpler, just run the project with the docker container: :fire:
 
-Software needed to execute the project with container:
+### Software needed to execute the project with container:
 
 [Docker](https://docs.docker.com/desktop/)
 
