@@ -1,0 +1,6 @@
+version: "3"
+services:
+  sagan_mars_rover:
+    build: .
+    ports:
+      - 8000:8000
