@@ -12,7 +12,7 @@ const htmlHead = `<head>
 </head>`;
 
 let lostRovers = [],
-  newPosRover,
+  newRoverPosition,
   response = `${htmlHead} <div class="jumbotron" style="padding:40px;"> <h1>Sagan Mars Rover</h1><p><b>Input:</b></p><br>[[INPUT]]<br><br><p><b>Output:</b></p><br>[[OUTPUT]]</div>`,
   cartesians = configurationData.cartesians,
   compass = configurationData.compass,
@@ -68,7 +68,7 @@ const _moveRovers = () => {
       return { errorCode: 404, message: "Without rovers" };
     }
 
-    newPosRover = rovers.map((rover) => {
+    newRoverPosition = rovers.map((rover) => {
       return _move(rover);
     });
 
@@ -81,7 +81,7 @@ const _moveRovers = () => {
 const _setOutputSheet = () => {
   try {
     let output = "";
-    for (let rover of newPosRover) {
+    for (let rover of newRoverPosition) {
       let lost = rover.lost ? " LOST" : "";
       output += `${rover.position[0]} ${rover.position[1]} ${
         configurationData.compass[rover.orientation]
@@ -99,8 +99,8 @@ function _move(rover) {
   (sRoute = rover.route),
     (currentP = [parseInt(arrPos[0]), parseInt(arrPos[1])]),
     (currentO = compass.indexOf(arrPos[2])),
-    (oldP = [currentP[0], currentP[1]]),
-    (oldO = currentO),
+    (oldPosition = [currentP[0], currentP[1]]),
+    (oldOrientation = currentO),
     (lost = false);
 
   for (let r of sRoute) {
@@ -122,12 +122,12 @@ function _move(rover) {
       }
 
       if (_checkCurrentPosition(currentP)) {
-        oldP = [currentP[0], currentP[1]];
-        oldO = currentO;
+        oldPosition = [currentP[0], currentP[1]];
+        oldOrientation = currentO;
       } else {
         lostRovers.push({
-          position: oldP,
-          orientation: oldO,
+          position: oldPosition,
+          orientation: oldOrientation,
         });
         lost = true;
         break;
@@ -135,8 +135,8 @@ function _move(rover) {
     }
   }
   return {
-    position: oldP,
-    orientation: oldO,
+    position: oldPosition,
+    orientation: oldOrientation,
     lost: lost,
   };
 }
