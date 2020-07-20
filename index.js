@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
     const data = Main.init();
     res.send(data);
   } catch (error) {
-    return { errorCode: 500, error: error };
+    return { errorCode: 500, error: error.message };
   }
 });
 
