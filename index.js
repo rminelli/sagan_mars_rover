@@ -13,5 +13,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, async () => {
-  console.log(`Backend running on port: http://localhost:${port}`);
+  console.log(`Backend running on http://localhost:${port}`);
 });
