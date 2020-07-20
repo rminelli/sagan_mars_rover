@@ -28,4 +28,4 @@ Software needed to execute the project with container:
 
 `docker-compose -f "docker-compose.yml" up -d --build`
 
-and ppen [http://localhost:8000/](http://localhost:8000/) to check the results!
+and open [http://localhost:8000/](http://localhost:8000/) to check the results!
